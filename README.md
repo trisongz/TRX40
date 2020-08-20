@@ -130,6 +130,7 @@ The images below show the steps. When editing the __config.plist__ file, the rec
 
 ![Test Image 10](Images/OC_paste.jpg)
 
+
 ### 7. Stability Issues
 
 There are presently two basic concerns with this build. The first is the inability to perform a shutdown from with the macOS. If Shutdown is selected from the Apple menu, the computer reboots (panic restart) immediately after 'clicking' off.
