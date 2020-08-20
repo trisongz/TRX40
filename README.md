@@ -1,5 +1,7 @@
 # OpenCore EFI for TRX40 Threadripper - AMD Hackintosh Bare Metal
 
+![Test Image 16](Images/PCI0.jpg)
+
 This repository provides the basic contents for an EFI folder to successfully boot "bare metal" MacOS on a __TRX40-based__ motherboard, using a Threadripper CPU, such as a 3960X, 3970X or 3990X. This repository will  be somewhat  generic and atttempt to discuss most TRX40 motherboards based on input from fabiosun's work at this [site](https://www.macos86.it/topic/3307-trx40-bare-metal-vanilla-patches-yes-it-worksbutproxmox-is-better/#comments). To date (see dates of this repository at bottom of  this Intro) the EFI should boot   _Catalina_ or _Big Sur_ (the latter in beta). The intended SMBIOS is _iMacPro1,1_ although provisions are available for running _MacPro7,1_ which will be described below.
 
 This repository is only designed for the OpenCore bootloader. __OpenCore__ (OC) is best updated via Pavo's [OCBuilder](https://github.com/Pavo-IM/ocbuilder/releases) app. Accordingly, if you have a working EFI boot folder, based on this repository, you can update various components of it as you see fit using OCBuilder. But do be careful not to over write files or folders unique to this build. If updated, please study the Docs folder in OpenCore to see if the structure of the __config.plist__ file needs to be changed (this respository will attempt to be current with the most stable release). Keep in mind that OpenCore is evolving, and consequently, new versions can substantially effect the overall structure and functioning of your __config.plist__ file. I feel that editing is best done using PlistEdit Pro or [ProperTree](https://github.com/corpnewt/ProperTree). While [OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/) may be used, if it is out of date with your OpenCore commit, you can get corruption of the __config.plist__ file which you may not notice for some time (and even find difficult to track down and correct).
@@ -192,6 +194,17 @@ Next, the NVRAM is activated by following these steps:
 
 - Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
 ![Test Image 13](Images/NVRAM-2.jpg)
+
+
+### 8. Performance
+
+Since the first successful TRX40 system to run macOS was based on Proxmox VM (thanks to fabiosun [here](https://www.macos86.it/topic/2509-guide-trx40-osx-bare-metal-proxmox-setup62-1-updated-25-07-2020/), any performance on bare metal must be compared to VM performance.
+
+So far, the performance between the two methods are close. The difference may be somewhat related to the tests themselves.
+
+A typcial resposne in Cinebench 20 (using an MSI TRX40 Creator with 3970X CPU) gives a resullt from 17,000 to almost 17,900. The fastest speed to date was on bare metal, but on average, the results are the same between the two.
+
+![Test Image 17](Images/Cinebench20.jpg)
 
 
 
