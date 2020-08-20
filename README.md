@@ -157,7 +157,7 @@ Next, the NVRAM is activated by following these steps:
 ## B. Usage
  
 - To build OpenCore using Pavo's OCBuilder, it is recommended to use the Release version with or without kexts update.
-- Move the repository included folders for ACPI, Kexts and the plist files into EFI/OC folder created by OCBuilder.
+- Update the repository EFI folder with part of the folder created by OCBuilder. Do not directly copy the ACPI, Driver, Kexts or Resources folder. Instead, select from within those folders the ideas you wish to update. Note that within the Resources folder is an Audio folder. Do not update this as it contains ~90MB of audio files which we're not using.
 - Verify that the proper driver efi files are in place, based on what is indicated within the __config.plist__ file.
 - NOTE: the __config.plist__ file does not contain SNs or UUIDs but place-holders that say "FILL-IN". You must supply these 
         values on your own (see section A8 above for details).
