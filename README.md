@@ -59,14 +59,26 @@ The above kext files may be updated independent of this repository using [Hackin
 
 See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
-![Test Image 4](Images/Hackintool-USB.jpg)
+![Test Image 3](Images/Hackintool-USB.jpg)
 
 
 ### 3. System Information / PCI
 
 This section shows the current status of the System Information section in Mac OS. The image shown represents the various devices being re-named by the DevicesProperties section of OC, some of which are included in the _config.plist file_.
 
-![Test Image 8](Images/SystemInfo-PCI.jpg)
+![Test Image 4](Images/SystemInfo-PCI.jpg)
+
+Aside from providing information to the PCI section (which is mostly costmetic, so nothing to worry about if allowed to remain empty), from SSDT files, the OpenCore DeviceProperties (DP) section can inject this data as well. Here is a section of DP showing injection of NVMe drives for the MSI TRX40 Creator mobo. The arrow points to a _#_ symbol. This symbol in OpenCore inactivates an entry. All DP entries in the supplied _config.plist_ file are inactivated. Simply delete the _#_ symbol to activate.
+
+![Test Image 5](Images/DP.jpg)
+
+The device pathway is derived from Hackintool by selecting the PCIe tab at top then the red high-lighted button at the bottom of the window:
+
+![Test Image 5](Images/Hackintool-DerivePath.jpg)
+
+After clicking on the button, a window will open with a highlighted text file. In this example, the drives are highighted. By copying and pasting into OpenCore's DP section shown above (and editing the actual entry data), you can custom this section for your own build. After rebooting, this data will show up in the System Information PCI section.
+
+![Test Image 5](Images/CopyDevicePath.jpg)
 
 
 ### 4. Drivers
