@@ -139,6 +139,14 @@ The second item concerns sleep and sudden shutdowns from sleep (but with the abo
 
 ![Test Image 11](Images/EnergySaver.jpg)
 
+When a system behaves poorly and won't boot well, consider re-flashing BIOS. BIOS can become corrupted with repeat crashes and forced re-starts; things that happen during a Hackintosh setup.
+
+But before that happens, do perform a full backup. I recommend using [CCC](https://bombich.com). 
+
+Also, have a spare drive or USB that contains an alternative EFI folder for emergency booting. You might consider for this backup EFI folder to remove all un-necessary kexts, turn off or remove all but the basic SSDT files. This can help for trouble-shooting.
+
+Finally, if all else fails, consider re-installing macOS from Recovery. To boot into Recovery, Big Sur in particular requires setting Misc/Security/ScanPolicy to 0.
+
 
 ### 7. Native NVRAM
 
