@@ -1,6 +1,6 @@
 # OpenCore EFI for TRX40 Threadripper - AMD Hackintosh Bare Metal
 
-![Test Image 16](Images/AboutMac.jpg)
+![Test Image 16](Docs/Images/AboutMac.jpg)
 
 This repository provides the basic contents for an EFI folder to successfully boot "bare metal" MacOS on a __TRX40-based__ motherboard, using a Threadripper CPU, such as a 3960X, 3970X or 3990X. This repository will  be somewhat  generic and atttempt to discuss most TRX40 motherboards based on input from fabiosun's work at this [site](https://www.macos86.it/topic/3307-trx40-bare-metal-vanilla-patches-yes-it-worksbutproxmox-is-better/#comments). To date (see dates of this repository at bottom of  this Intro) the EFI should boot   _Catalina_ or _Big Sur_ (the latter in beta). The intended SMBIOS is _iMacPro1,1_ although provisions are available for running _MacPro7,1_ which will be described below.
 
@@ -37,7 +37,7 @@ There are SSDT files to rename NVMe drives such a _12-SSDT-TRX40-NVMe-ANSx.aml_.
 This section shows 2 NVMe re-names along wtih the D0B8 rename (this and the D1B8 USB devices are common to all TRX40 mobos). Also shown are the effects of the EC-USBX-MCHC-SBRG SSDT, which creates the PMCR device for better PowerManagement.
 
 __PCI0 Section:__
-![Test Image 0](Images/PCI0.jpg)
+![Test Image 0](Docs/Images/PCI0.jpg)
 
 The SSDT file _12c-SSDT-TRX40-NVMe-ANSx-Inject.aml_ is provided as an example of how to inject data about a device, in this case an NVMe drive, to System Information's PCI section. If you open it to edit (use MaciASL), you'll see near the top a reference to "DTGP". This external method is kept in the ACPI folder and is the 2nd one called in the entries (_1-SSDT-DTGP.aml_); this file must be present for everything to properly  work.
 
@@ -49,20 +49,20 @@ There are sets of SSDT files which rename the various USB devices on the TRX40 b
 This image shows at the bottom, the first (or only) GPU in slot 1.
 
 __S0D1 Section:__
-![Test Image 1](Images/S0D1.jpg)
+![Test Image 1](Docs/Images/S0D1.jpg)
 
 
 This image shows the USB devices XHC3 (which may vary with different mobos), XHC-XHCI (which seem common to all TRX40s), and at the bottom, a 2nd GPU (slot 3).
 
 __S0D2 Section:__
-![Test Image 2](Images/S0D2.jpg)
+![Test Image 2](Docs/Images/S0D2.jpg)
 
 
 
 The result of using the above USB SSDT files can be verified by using the Hackintool app (shown below) or with IOReigstryExplorer. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices; with their use, this section is now properly populated.
 
 __Hackintool - USB Devices:__
-![Test Image 3](Images/Hackintool-USB.jpg)
+![Test Image 3](Docs/Images/Hackintool-USB.jpg)
 
 
 
@@ -71,7 +71,7 @@ __Cancelling a device with an SSDT__
 With Hackintoshes, we all personalize our builds. One area where this is apparent is with BT/Wifi: some don't it use at all, some try to use the built-in device (which will be discussed later in the Kexts section), some use an AIC and some swap out the built-in card for a Mac compatible model. Each of these can require different SSDT and kext files. We'll ignore the first two cases, but if an AIC is used, it is best to deactivate the internal module which is an AX200 for most TRX40 mobos). This can be done via an SSDT. (Of course, no deactivation is desired if the BT module is swapped out.)
 
 Before deactivating the BT module, we need to locate which USB device port is powering the internal module using IORegitryExplorer. This can be done with or without the BT AIC installed. Once that USB device port is located, in this case it was PRT5 under XHC on the GB Designare mobo, we re-define all of the ports except that port with the SSDT. The image below shows an except from the SSDT illustrating how the internal BT is disabled. If no PRT5 is being defined: it disappears and so the internal BT module also disappears.
-![Test Image 14](Images/SSDT-NoBT.jpg)
+![Test Image 14](Docs/Images/SSDT-NoBT.jpg)
 
 
 ### 2. Kexts
@@ -97,19 +97,19 @@ The above kext files may be updated independent of this repository using [Hackin
 
 This section shows the current status of the System Information section in Mac OS. The image shown represents the various devices being re-named by the DevicesProperties section of OC, some of which are included in the _config.plist file_.
 
-![Test Image 4](Images/SystemInfo-PCI.jpg)
+![Test Image 4](Docs/Images/SystemInfo-PCI.jpg)
 
 Aside from providing information to the PCI section (which is mostly costmetic, so nothing to worry about if allowed to remain empty), from SSDT files, the OpenCore DeviceProperties (DP) section can inject this data as well. Here is a section of DP showing injection of NVMe drives for the MSI TRX40 Creator mobo. The arrow points to a _#_ symbol. This symbol in OpenCore inactivates an entry. All DP entries in the supplied _config.plist_ file are inactivated. Simply delete the _#_ symbol to activate.
 
-![Test Image 5](Images/DP.jpg)
+![Test Image 5](Docs/Images/DP.jpg)
 
 The device pathway is derived from Hackintool by selecting the PCIe tab at top then the red high-lighted button at the bottom of the window:
 
-![Test Image 5](Images/Hackintool-DerivePath.jpg)
+![Test Image 5](Docs/Images/Hackintool-DerivePath.jpg)
 
 After clicking on the button, a window will open with a highlighted text file. In this example, the drives are highighted. By copying and pasting into OpenCore's DP section shown above (and editing the actual entry data), you can custom this section for your own build. After rebooting, this data will show up in the System Information PCI section.
 
-![Test Image 6](Images/CopyDevicePath.jpg)
+![Test Image 6](Docs/Images/CopyDevicePath.jpg)
 
 
 ### 4. Drivers
@@ -118,9 +118,9 @@ Only a few drivers are required with OpenCore: HSSPlus, OpenCanopy and OpenRunti
 
 If you choose to use the OpenCanopy drive for the menu system, some items may be hidden, based on a setting in Misc/Boot/ called HideAuxillary. If this is enabled, all items marked as Auxillary in the Misc/Tools are enabled as long as they are also Enabled. In the example below, the ResetSystem.efi was set up for Shutdown behavior.
 
-![Test Image 7](Images/Shutdown.jpg)
+![Test Image 7](Docs/Images/Shutdown.jpg)
 
-![Test Image 8](Images/Misc-Auxillary.jpg)
+![Test Image 8](Docs/Images/Misc-Auxillary.jpg)
 
 
 ### 5. BIOS Settings
@@ -157,9 +157,9 @@ The images below show the steps. When editing the __config.plist__ file, the rec
 - Highlight and click into the remaining section marked _PlatformInfo 2_, editing out the space and 2 (" 2").
 - Then save the file.
 
-![Test Image 9](Images/OC_copy.jpg)
+![Test Image 9](Docs/Images/OC_copy.jpg)
 
-![Test Image 10](Images/OC_paste.jpg)
+![Test Image 10](Docs/Images/OC_paste.jpg)
 
 
 ### 7. Stability Issues
@@ -168,7 +168,7 @@ There are presently two basic concerns with this build. The first is the inabili
 
 The second item concerns sleep and sudden shutdowns from sleep (but with the above panic restart). The best method to avoid this problem is to turn off all settings within Energy Saver, leaving only "Prevent computer from sleeping..." as shown below.
 
-![Test Image 11](Images/EnergySaver.jpg)
+![Test Image 11](Docs/Images/EnergySaver.jpg)
 
 When a system behaves poorly and won't boot well, consider re-flashing BIOS. BIOS can become corrupted with repeat crashes and forced re-starts; things that happen during a Hackintosh setup.
 
@@ -180,7 +180,7 @@ Finally, if all else fails, consider re-installing macOS from Recovery. To boot 
 
 The Hackintool app can help with sleep issues using it's Power tool (image below). Click on the screw driver tool (arrow); when prompted, enter your pw; and then the red high-lighted bars (which are green in this image), will change from red to green. Simple.
 
-![Test Image 15](Images/Hackintool-Power.jpg)
+![Test Image 15](Docs/Images/Hackintool-Power.jpg)
 
 
 ### 7. Native NVRAM
@@ -190,10 +190,10 @@ Native NVRAM was successfully implemented. There are several steps required. The
 Next, the NVRAM is activated by following these steps: 
 
 - Adjust Quirks as shown below and set WriteFlash to Yes (enable; while leaving LegacyEnable and LegacyOverwrite disabled). In the screenshot below, you can see _#MmioWhitelist_ (the _#_ comments out this iitem), which contains a brief example of what the MmioWhitelist contains, as a guide for making your own (this item can be deleted as you wish):
-![Test Image 12](Images/NVRAM-1.jpg)
+![Test Image 12](Docs/Images/NVRAM-1.jpg)
 
 - Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
-![Test Image 13](Images/NVRAM-2.jpg)
+![Test Image 13](Docs/Images/NVRAM-2.jpg)
 
 
 ### 8. Performance
@@ -204,7 +204,7 @@ So far, the performance between the two methods are close. The difference may be
 
 A typcial resposne in Cinebench 20 (using an MSI TRX40 Creator with 3970X CPU) gives a resullt from 17,000 to almost 17,900. The fastest speed to date was on bare metal, but on average, the results are the same between the two.
 
-![Test Image 17](Images/Cinebench20.jpg)
+![Test Image 17](Docs/Images/Cinebench20.jpg)
 
 
 
