@@ -78,13 +78,18 @@ The device pathway is derived from Hackintool by selecting the PCIe tab at top t
 
 After clicking on the button, a window will open with a highlighted text file. In this example, the drives are highighted. By copying and pasting into OpenCore's DP section shown above (and editing the actual entry data), you can custom this section for your own build. After rebooting, this data will show up in the System Information PCI section.
 
-![Test Image 5](Images/CopyDevicePath.jpg)
+![Test Image 6](Images/CopyDevicePath.jpg)
 
 
 ### 4. Drivers
 
-Only a few drivers are required with OpenCore: HSSPlus, OpenCanopy and OpenRuntime. AudioDxe, CrScreenshotDxe and OpenUsbKbDxe are optional. CrScreenshotDxe is a useful tool to record screen shots when the OC menu is being used: press <F10> to record an image. The image will be stored on the EFI partition.
+Only a few drivers are required with OpenCore: HSSPlus, OpenCanopy and OpenRuntime. AudioDxe, CrScreenshotDxe and OpenUsbKbDxe are optional. CrScreenshotDxe is a useful tool to record screen shots when the OC menu is being used: press <F10> to record an image (example shown below). The image will be stored on the EFI partition. 
 
+If you choose to use the OpenCanopy drive for the menu system, some items may be hidden, based on a setting in Misc/Boot/ called HideAuxillary. If this is enabled, all items marked as Auxillary in the Misc/Tools are enabled as long as they are also Enabled. In the example below, the ResetSystem.efi was set up for Shutdown behavior.
+
+![Test Image 7](Images/Shutdown.jpg)
+
+![Test Image 7](Images/Misc-Auxillary.jpg)
 
 
 ### 5. BIOS Settings
