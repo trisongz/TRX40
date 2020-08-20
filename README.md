@@ -8,13 +8,11 @@ The EFI folder in this repository should be placed on the EFI partition of your 
 
 OpenCore version numbers are not incremented for each minor adjustment, but incremented once stable. However, there are dates of commits indicated within each version before the version number is incremented. While there may  be only small changes within a version, the changes can have marked structural changes and yet not be fully documented. Accordingly, it is best to use final release versions. Due to the sometimes daily changes, this repository will only upload changes if the commit seems stable and then note the date of compilation along with the version number. 
 
-The later releases of v061 dated after 8/9/20 thru at least 8/12/20 have not been stable for a successful bare metal boot, which is why on this repository, v061 is frozen at release date 8/9/20.
-
 The present EFI folder is: 
 
-***v061 - 8/9/2020***
+***v061 - 8/12/2020***
 
-***Commentary Update - 8/19/20***
+***Commentary Update - 8/20/20***
 
 
 ## A. Contents
