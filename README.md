@@ -52,9 +52,9 @@ The result of these USB SSDT can be seen using the Hackintool app (shown below).
 
 __Cancelling a device with an SSDT__
 
-With Hackintoshes, we all personalize our builds. One area where this is apparent is with BT/Wifi issues: some don't use at all, some try to use the built-in device (will be discussed later in kext section), some use an AIC and some swap out the built-in card for a Mac compatible model. Each of these can require different SSDT and kext files. We'll ignore the first two cases, but if an AIC is used, it is best to deactivate the internal module which is an AX200 for most TRX40 mobos). This can be done via an SSDT. 
+With Hackintoshes, we all personalize our builds. One area where this is apparent is with BT/Wifi: some don't it use at all, some try to use the built-in device (which will be discussed later in the Kexts section), some use an AIC and some swap out the built-in card for a Mac compatible model. Each of these can require different SSDT and kext files. We'll ignore the first two cases, but if an AIC is used, it is best to deactivate the internal module which is an AX200 for most TRX40 mobos). This can be done via an SSDT. (Of course, no deactivation is desired if the BT module is swapped out.)
 
-Before using an SSDT, we need to locate which USB device port is powering the AX200 module using IORegitryExplorer. Once that USB device port is located, in this case it was PRT5 under XHC, we re-define all of the ports except that port with the SSDT. The image below shows how the internal BT is disabled, there is simply no PRT5 being defined: it disappears and so does the internal BT module:
+Before deactivating the BT module, we need to locate which USB device port is powering the internal module using IORegitryExplorer. This can be done with or without the BT AIC installed. Once that USB device port is located, in this case it was PRT5 under XHC on the GB Designare mobo, we re-define all of the ports except that port with the SSDT. The image below shows an except from the SSDT illustrating how the internal BT is disabled. If no PRT5 is being defined: it disappears and so the internal BT module also disappears:
 ![Test Image 14](Images/SSDT-NoBT.jpg)
 
 
