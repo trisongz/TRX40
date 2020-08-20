@@ -176,7 +176,7 @@ Also, have a spare drive or USB that contains an alternative EFI folder for emer
 
 Finally, if all else fails, consider re-installing macOS from Recovery. To boot into Recovery, Big Sur in particular requires setting Misc/Security/ScanPolicy to 0.
 
-The Hackintool app can help with sleep issues using it's Power tool (image below). Click on the screw driver tool (arrow); when prompted, enter your pw; and then the red high-lighted bars (which are green in this image), will change from red to green.
+The Hackintool app can help with sleep issues using it's Power tool (image below). Click on the screw driver tool (arrow); when prompted, enter your pw; and then the red high-lighted bars (which are green in this image), will change from red to green. Simple.
 
 ![Test Image 15](Images/Hackintool-Power.jpg)
 
