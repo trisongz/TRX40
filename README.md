@@ -163,8 +163,6 @@ Next, the NVRAM is activated by following these steps:
 - Again, editing of __config.plist__ files should only be done with PlistEdit Pro or [ProperTree](https://github.com/corpnewt/ProperTree).
 - Remember, the EFI folder, containing the Boot and OC folders, goes onto the EFI partition of your boot drive. 
         Don't make the mistake of placing the Boot and OC folders directly onto the EFI partition: this won't boot.
-- Finally, the EFI folder should have a structure as shown below.
-
                         
 
 ## E. Discussion
