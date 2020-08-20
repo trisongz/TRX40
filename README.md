@@ -153,6 +153,7 @@ Next, the NVRAM is activated by following these steps:
 ![Test Image 13](Images/NVRAM-OC-settings-2.jpg)
 
 
+
 ## B. Usage
  
 - To build OpenCore using Pavo's OCBuilder, it is recommended to use the Release version with or without kexts update.
@@ -168,7 +169,6 @@ Next, the NVRAM is activated by following these steps:
 ## E. Discussion
 
 - [OpenCore Discussion](https://www.insanelymac.com/forum/topic/338516-opencore-discussion/?page=1) for general OC issues
-
 - [TRX40 Bare Metal Discussion](https://www.macos86.it/topic/3307-trx40-bare-metal-vanilla-patches-yes-it-worksbutproxmox-is-better/#comments) for general TRX40 bare metal issues (started by fabiosun)
 
 ### Credits
