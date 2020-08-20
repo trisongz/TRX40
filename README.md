@@ -202,10 +202,25 @@ Since the first successful TRX40 system to run macOS was based on Proxmox VM (th
 
 So far, the performance between the two methods are close. The difference may be somewhat related to the tests themselves.
 
+Geekbench 4 CPU results 106268 for Multi-Core and 4286 for Singe-Core. By way of comparison, an Intel 9880XE will score about 70,000 for Multi-Core. These test results suggest the AMD platform is not limiting the test results.
+
 A typcial resposne in Cinebench 20 (using an MSI TRX40 Creator with 3970X CPU) gives a resullt from 17,000 to almost 17,900. The fastest speed to date was on bare metal, but on average, the results are the same between the two.
 
 ![Test Image 17](Docs/Images/Cinebench20.jpg)
 
+Blender in bare metal tested at 39s for BMW27 and 1m55s for the Classroom. (As a comparison, an Intel i8700i with a GTX 1080Ti tests at 2m21s for BMW27 Win10, while an Intel 9980XE recorded a 100s score).
+
+![Test Image 18](Docs/Images/Blender.jpg)
+
+Graphics testing yields variable results with some users reporting significantly poorer response in bare metal. But even Intel Hackintoshes have variable results based on the macOS and the particular GPU (if NVIDA, it won't run anything after High Sierra; and if AMD, NAVI responds better to Big Sur than Mojave or Catalina).
+
+Also, most tests, except notably LuxMark, only test single GPUs. My system has 2 GPUs (both Radeon VIIs). The LuxMark test in VM was as great as 108,000. The scores in bare metal to date are about ~7% lower (a single Radeon VII usually tests in Intel bare metal machines around 51,000). Overall, not a signifcant difference.
+
+![Test Image 19](Docs/Images/LuxMark.jpg)
+
+Meanwhile, Cinebench 15 GPU results in bare metal are 50% lower than those from VM or an Intel based system, suggesting the test is not behaving the same across different platforms.
+
+Geekbench 4 GPU results are also lower. On an Intel Hackintosh, a Radeon VII can get an OpenCL and Metal scores around 240,000. On the TRX40 bare metal, this value drops to 129,000 for OpenCl and 144,000 for Metal. These results suggest that either the platform is limiting the GPU results or that the tests are flawed. Since LumMark tests the same, I think the tests are more suspect.
 
 
 ## B. Usage
