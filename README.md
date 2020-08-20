@@ -150,7 +150,7 @@ Next, the NVRAM is activated by following these steps:
 ![Test Image 12](Images/NVRAM-1.jpg)
 
 - Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
-![Test Image 13](Images/NVRAM-OC-settings-2.jpg)
+![Test Image 13](Images/NVRAM-2.jpg)
 
 
 
