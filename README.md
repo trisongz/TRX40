@@ -142,7 +142,15 @@ The second item concerns sleep and sudden shutdowns from sleep (but with the abo
 
 ### 7. Native NVRAM
 
-Native NVRAM was successfully implemented. There are several steps required. These are outlined in detail on fabiosun's thread here. 
+Native NVRAM was successfully implemented. There are several steps required. These are outlined in detail on fabiosun's thread. These steps include determining MmioWhitelist and the optimum slide value (both of these are discussed in this [post](https://www.macos86.it/topic/3307-trx40-bare-metal-vanilla-patches-yes-it-worksbutproxmox-is-better/?do=findComment&comment=82868).
+
+Next, the NVRAM is activated by following these steps: 
+
+1 Adjust Quirks as shown below and set WriteFlash to Yes (enable; while leaving LegacyEnable and LegacyOverwrite disabled):
+[Test Image 12](Images/NVRAM-1.jpg)
+
+2. Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
+[Test Image 13](Images/NVRAM-OC-settings-2.jpg)
 
 
 ## B. Usage
