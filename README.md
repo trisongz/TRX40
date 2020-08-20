@@ -4,7 +4,7 @@ This repository provides the basic contents for an EFI folder to successfully bo
 
 This repository is only designed for the OpenCore bootloader. __OpenCore__ (OC) is best updated via Pavo's [OCBuilder](https://github.com/Pavo-IM/ocbuilder/releases) app. Accordingly, if you have a working EFI boot folder, based on this repository, you can update various components of it as you see fit using OCBuilder. But do be careful not to over write files or folders unique to this build. If updated, please study the Docs folder in OpenCore to see if the structure of the __config.plist__ file needs to be changed (this respository will attempt to be current with the most stable release). Keep in mind that OpenCore is evolving, and consequently, new versions can substantially effect the overall structure and functioning of your __config.plist__ file. I feel that editing is best done using PlistEdit Pro or [ProperTree](https://github.com/corpnewt/ProperTree). While [OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/) may be used, if it is out of date with your OpenCore commit, you can get corruption of the __config.plist__ file which you may not notice for some time (and even find difficult to track down and correct).
 
-The EFI folder in this repository should be placed on the EFI partition of your boot drive. Don't make the rooky mistake of placing the contents of the EFI folder of this repository on the EFI partition. Instead, the EFI partition contains an EFI folder, which in turn contains the Boot and OC folders.
+The EFI folder in this repository should be placed on the EFI partition of your boot drive. Don't make the mistake of placing the contents of the EFI folder of this repository on the EFI partition. Instead, the EFI partition contains an EFI folder, which in turn contains the Boot and OC folders.
 
 OpenCore version numbers are not incremented for each minor adjustment, but incremented once stable. However, there are dates of commits indicated within each version before the version number is incremented. While there may  be only small changes within a version, the changes can have marked structural changes and yet not be fully documented. Accordingly, it is best to use final release versions. Due to the sometimes daily changes, this repository will only upload changes if the commit seems stable and then note the date of compilation along with the version number. 
 
@@ -161,17 +161,8 @@ Next, the NVRAM is activated by following these steps:
 - NOTE: the __config.plist__ file does not contain SNs or UUIDs but place-holders that say "FILL-IN". You must supply these 
         values on your own (see section A8 above for details).
 - Again, editing of __config.plist__ files should only be done with PlistEdit Pro or [ProperTree](https://github.com/corpnewt/ProperTree).
-- There is a file named config-Only-For-Storage.plist. This file stores data that can be copy and pasted to the main
-        __config.plist__ file. For example, inside is an entry "PlatformInfo-MacPro7,1". With both files open, you can high- 
-        light and copy this section from the storage file to your __config.plist__ file, pasting immediately below your current
-        PlatformInfo section. You can then remove the original PlatformInfo, replacing it with _PlatformInfo-MacPro7,1_. Then
-        rename _PlatformInfo-MacPro7,1_ as _PlatformInfo_. Next, provide new SNs and UUID values for this section. (Alternately,
-        you can enter SNs and UUIDs into the storage portion and keep sets of SN-entered PlatformInfo sections ready for
-        either _iMacPro1,1_ or _MacPro7,1_, switching as needed with little effort. (See A8 above for more details.) 
-        Other items stored in this file are DevicePropertiesfor swapped or PCIe BT modules. These are all present for convenience; 
-        they are not required. 
 - Remember, the EFI folder, containing the Boot and OC folders, goes onto the EFI partition of your boot drive. 
-        Don't make the rookie mistake of placing the Boot and OC folders directly onto the EFI partition: this won't boot.
+        Don't make the mistake of placing the Boot and OC folders directly onto the EFI partition: this won't boot.
 - Finally, the EFI folder should have a structure as shown below.
 
                         
