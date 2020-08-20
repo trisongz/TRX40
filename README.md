@@ -45,6 +45,10 @@ There are sets of SSDT files which rename the various USB devices on the TRX40 b
 ![Test Image 2](Images/S0D2.jpg)
 
 
+To delete an internal BT/Wifi device (AX200), the following can be done:......__(to be completed)__
+
+
+
 ### 2. Kexts
 
 The contents of the Kexts folder can be broken down into various groups.
@@ -53,14 +57,13 @@ The first grouping are the essential kexts: AppleALC, AppleMCEReporterDisabler, 
 
 The second groupding are the BT/Wifi kexts: AirportBrcmFixup, BrcmBluetoothInjector, BrcmFirmwareData, and BrcmPatchRAM3. If you've swapped out the stock Intel BT module for a Mac-compatible version you'll want all of these enabled within the __config.plist__ file. On the other hand, if you've added a PCIe BT/WiFi card such as the Fenvi FV-T919 (with a Broadcom 94360CD), then most of these kext files are optional.
 
-To delete an internal BT/Wifi device (AX200), the following can be done:......__(to be completed)__
-
-
 Note, there are recent concerns with sleep issues, jitterey mouse and computer freezes with Radeon VII and Radeon 5700XT graphics cards. It appears to be an issue with WEG. If you are using these cards (and perhaps even any 5x00 card), try disabling WEG and re-booting the system to see if the issues are resolved. When WEG is disabled, you might notice some cosmetic glitches, such as pink/purple lines at the top of the screen, during boot (while the Apple logo progress bar is on-going). These are  inconsequential, so don't worry about them (WEG normally surpresses them without you're knowing it). This problem does not seem to be an issue with older grapics cards.
 
-MacProMemoryNotificationDisabler is only to be enabled when using SMBIOS _MacPro7,1_ (which requires Catalina). __Please note: the most stable setup is SMBIOS iMacPro1,1.__ This SMBIOS is closest to our build. If you have trouble while using MacPro7,1, you were warned and don't ask for help; instead, sign out of iCloud and then change the SMBIOS to iMacPro1,1.
+On the TRX40 build, WEG (as of 8/20/20), prevents booting into Big Sur, so either disable it, or if enabled, pass _-wegbeta_ in boot arg to allow booting into both Catalina and Big Sur.
 
-[SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) is useful for providing CPU temperature and frequency information. Presently, it is unstable with Catalina and Big Sur with the TRX40 running bare metal. Please refer to its GitHub for the latest updates and for downloading the associated AMD Power Gadget app which presents the data. _AMDRyzenCPUPowerManagement.kext_ and AMD Power Gadget app is stable with Catalina, but not Big Sur.
+MacProMemoryNotificationDisabler is only to be enabled when using SMBIOS _MacPro7,1_ (which requires Catalina). __Please note: the most stable setup is SMBIOS iMacPro1,1.__ This SMBIOS is closest to our build. If you have trouble while using MacPro7,1, you were warned and don't ask for help; instead, sign out of iCloud and change the SMBIOS to iMacPro1,1, and after re-booting sign in again to iCloud.
+
+[SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) is useful for providing CPU temperature and frequency information.  The kexts were designed for the X570 AMD chip, and not surprisingly, it is unstable with Catalina and Big Sur with the TRX40 running bare metal. Please refer to its GitHub for the latest updates and for downloading the associated AMD Power Gadget app which presents the data. However, _AMDRyzenCPUPowerManagement.kext_ and AMD Power Gadget app is stable with Catalina with the TRX40 build, but it is not stable under Big Sur and Big Sur won't boot if either of these kexts are enabled.
 
 The above kext files may be updated independent of this repository using [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/), [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) or [OCBuilder](https://github.com/Pavo-IM/ocbuilder/releases). 
 
