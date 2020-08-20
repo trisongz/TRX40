@@ -31,6 +31,8 @@ The GPU SSDT files, _5-SSDT-TRX40-GFX0.aml_ and _5-SSDT-TRX40-GFX0-FGX1.aml_  pr
 
 There are SSDT files to rename NVMe drives such a _12-SSDT-TRX40-NVMe-ANSx.aml_. This files, since it's numbered "12" is meant for an MSI mobo. It will rename 3 NMVe drives as written. Unless data to inject is added, the SSDT file will not contribute information to the System Information/PCI section. However, by simply renaming the device, the desktop disk icons are forced to be updated and changed from external to internal icons. 
 
+__PCI0 Section__
+This section shows 2 NVMe re-names along wtih the D0B8 rename (this and the D1B8 USB devices are common to all TRX40 mobos). Also shown are the effects of the EC-USBX-MCHC-SBRG SSDT, which creates the PMCR device for better PowerManagement.
 ![Test Image 0](Images/PCI0.jpg)
 
 The SSDT file _12c-SSDT-TRX40-NVMe-ANSx-Inject.aml_ is provided as an example of how to inject data about a device, in this case an NVMe drive, to System Information's PCI section. If you open it to edit (use MaciASL), you'll see near the top a reference to "DTGP". This external method is kept in the ACPI folder and is the 2nd one called in the entries (_1-SSDT-DTGP.aml_); this file must be present for everything to properly  work.
@@ -39,22 +41,28 @@ The information changes in these files should be changed to reflect the brand an
 
 There are sets of SSDT files which rename the various USB devices on the TRX40 builds. The ones named DOB8 and D1B8 are common to all builds and are renamed to XHC1 and XHC2, respectively.
 
+__S0D1 Section__
+This image shows at the bottom, the first (or only) GPU in slot 1:
 ![Test Image 1](Images/S0D1.jpg)
 
 
+__S0D2 Section__
+This image shows the USB devices XHC3 (which may vary with different mobos), XHC-XHCI (which seem common to all TRX40s), and at the bottom, a 2nd GPU (slot 3):
 ![Test Image 2](Images/S0D2.jpg)
 
 
+__Hackintool__
 The result of these USB SSDT can be seen using the Hackintool app (shown below). WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
 ![Test Image 3](Images/Hackintool-USB.jpg)
+
 
 
 __Cancelling a device with an SSDT__
 
 With Hackintoshes, we all personalize our builds. One area where this is apparent is with BT/Wifi: some don't it use at all, some try to use the built-in device (which will be discussed later in the Kexts section), some use an AIC and some swap out the built-in card for a Mac compatible model. Each of these can require different SSDT and kext files. We'll ignore the first two cases, but if an AIC is used, it is best to deactivate the internal module which is an AX200 for most TRX40 mobos). This can be done via an SSDT. (Of course, no deactivation is desired if the BT module is swapped out.)
 
-Before deactivating the BT module, we need to locate which USB device port is powering the internal module using IORegitryExplorer. This can be done with or without the BT AIC installed. Once that USB device port is located, in this case it was PRT5 under XHC on the GB Designare mobo, we re-define all of the ports except that port with the SSDT. The image below shows an except from the SSDT illustrating how the internal BT is disabled. If no PRT5 is being defined: it disappears and so the internal BT module also disappears:
+Before deactivating the BT module, we need to locate which USB device port is powering the internal module using IORegitryExplorer. This can be done with or without the BT AIC installed. Once that USB device port is located, in this case it was PRT5 under XHC on the GB Designare mobo, we re-define all of the ports except that port with the SSDT. The image below shows an except from the SSDT illustrating how the internal BT is disabled. If no PRT5 is being defined: it disappears and so the internal BT module also disappears.
 ![Test Image 14](Images/SSDT-NoBT.jpg)
 
 
