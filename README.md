@@ -115,7 +115,7 @@ The SMBIOS data can be generated using an old copy of Clover (but do NOT use Clo
 
 If you already have SNs and UUIDs values in an existing OpenCore config file, then cloning that SMBIOS data is easy. OC allows you to simpliy copy and paste sections, such as the PlatformInfo section, between config files. (However, keep in mind that if you _change_ your SMBIOS, first log out of iCloud, perform the SMBIOS change, reboot, and then re-log into iCloud.)
 
-The images below show the steps. When editing the __config.plist__ file, the recommended editors are PlistEdit Pro, Xcode or [ProperTree](https://github.com/corpnewt/ProperTree).
+The images below show the steps. When editing the __config.plist__ file, the recommended editors are PlistEdit Pro or [ProperTree](https://github.com/corpnewt/ProperTree). It is probably bes to avoid using XCode for editing OC files as it sometimes corrupts the __config.plist__ file by changing i_nteger_ values into _real_ values, which generates errors during boot.
 
 - Backup the config files before starting.
 - Open both files you're to copy between.
