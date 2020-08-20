@@ -62,7 +62,7 @@ The second groupding are the BT/Wifi kexts: AirportBrcmFixup, BrcmBluetoothInjec
 
 Note, there are recent concerns with sleep issues, jitterey mouse and computer freezes with Radeon VII and Radeon 5700XT graphics cards. It appears to be an issue with WEG. If you are using these cards (and perhaps even any 5x00 card), try disabling WEG and re-booting the system to see if the issues are resolved. When WEG is disabled, you might notice some cosmetic glitches, such as pink/purple lines at the top of the screen, during boot (while the Apple logo progress bar is on-going). These are  inconsequential, so don't worry about them (WEG normally surpresses them without you're knowing it). This problem does not seem to be an issue with older grapics cards.
 
-On the TRX40 build, WEG (as of 8/20/20), prevents booting into Big Sur, so either disable it, or if enabled, pass _-wegbeta_ in boot arg to allow booting into both Catalina and Big Sur.
+On the TRX40 build, WEG (as of 8/20/20), prevents booting into Big Sur, so either disable it, or if enabled, pass "_-wegbeta_" in boot arg to allow booting into both Catalina and Big Sur.
 
 MacProMemoryNotificationDisabler is only to be enabled when using SMBIOS _MacPro7,1_ (which requires Catalina). __Please note: the most stable setup is SMBIOS iMacPro1,1.__ This SMBIOS is closest to our build. If you have trouble while using MacPro7,1, you were warned and don't ask for help; instead, sign out of iCloud and change the SMBIOS to iMacPro1,1, and after re-booting sign in again to iCloud.
 
