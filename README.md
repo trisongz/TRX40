@@ -38,15 +38,16 @@ The information changes in these files should be changed to reflect the brand an
 There are sets of SSDT files which rename the various USB devices on the TRX40 builds. The ones named DOB8 and D1B8 are common to all builds and are renamed to XHC1 and XHC2, respectively.
 
 
-On board TB3, using _SSDT-X570-TB3-Builtin.aml_:
-
-
-
 ### 2. Kexts
 
 The contents of the Kexts folder can be broken down into various groups.
 
 The first grouping are the essential kexts: AppleALC, AppleMCEReporterDisabler, Lilu, SmallTreeIntel82576-I211, VirtualSMC and WhateverGreen (WEG). Within the __config.plist__ file, in the Kernel section, Lilu must be first in order, followed by VirtualSMC. Similarly, WEG should be present before other graphics related kext files.
+
+The second groupding are the BT/Wifi kexts: AirportBrcmFixup, BrcmBluetoothInjector, BrcmFirmwareData, and BrcmPatchRAM3. If you've swapped out the stock Intel BT module for a Mac-compatible version you'll want all of these enabled within the __config.plist__ file. On the other hand, if you've added a PCIe BT/WiFi card such as the Fenvi FV-T919 (with a Broadcom 94360CD), then most of these kext files are optional.
+
+To delete an internal BT/Wifi device (AX200), the following can be done:.....................................(to be completed)
+
 
 Note, there are recent concerns with sleep issues, jitterey mouse and computer freezes with Radeon VII and Radeon 5700XT graphics cards. It appears to be an issue with WEG. If you are using these cards (and perhaps even any 5x00 card), try disabling WEG and re-booting the system to see if the issues are resolved. When WEG is disabled, you might notice some cosmetic glitches, such as pink/purple lines at the top of the screen, during boot (while the Apple logo progress bar is on-going). These are  inconsequential, so don't worry about them (WEG normally surpresses them without you're knowing it). This problem does not seem to be an issue with older grapics cards.
 
@@ -56,20 +57,16 @@ MacProMemoryNotificationDisabler is only to be enabled when using SMBIOS _MacPro
 
 The above kext files may be updated independent of this repository using [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/), [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) or [OCBuilder](https://github.com/Pavo-IM/ocbuilder/releases). 
 
-The second groupding are the BT/Wifi kexts: AirportBrcmFixup, BrcmBluetoothInjector, BrcmFirmwareData, and BrcmPatchRAM3. If you've swapped out the stock Intel BT module for a Mac-compatible version you'll want all of these enabled within the __config.plist__ file. On the other hand, if you've added a PCIe BT/WiFi card such as the Fenvi FV-T919 (with a Broadcom 94360CD), then most of these kext files are optional.
-
-To delete an internal BT/Wifi device (AX200), the following can be done:.....................................(to be completed)
-
 See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
-![Test Image 4](Images/Hackintol-USB.jpg)
+![Test Image 4](Images/Hackintol-USB.png)
 
 
 ### 3. System Information / PCI
 
 This section shows the current status of the System Information section in Mac OS. The image shown represents the various devices being re-named by the DevicesProperties section of OC, some of which are included in the _config.plist file_.
 
-![Test Image 8](Images/SystemInfo-PCi.jpg)
+![Test Image 8](Images/SystemInfo-PCi.png)
 
 
 ### 4. Drivers
