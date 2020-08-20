@@ -33,11 +33,18 @@ The GPU SSDT files, _5-SSDT-TRX40-GFX0.aml_ and _5-SSDT-TRX40-GFX0-FGX1.aml_  pr
 
 There are SSDT files to rename NVMe drives such a _12-SSDT-TRX40-NVMe-ANSx.aml_. This files, since it's numbered "12" is meant for an MSI mobo. It will rename 3 NMVe drives as written. Unless data to inject is added, the SSDT file will not contribute information to the System Information/PCI section. However, by simply renaming the device, the desktop disk icons are forced to be updated and changed from external to internal icons. 
 
+![Test Image 0](Images/PCI0.jpg)
+
 The SSDT file _12c-SSDT-TRX40-NVMe-ANSx-Inject.aml_ is provided as an example of how to inject data about a device, in this case an NVMe drive, to System Information's PCI section. If you open it to edit (use MaciASL), you'll see near the top a reference to "DTGP". This external method is kept in the ACPI folder and is the 2nd one called in the entries (_1-SSDT-DTGP.aml_); this file must be present for everything to properly  work.
 
 The information changes in these files should be changed to reflect the brand and sizes of NVMe drives that you are using in your build. For example, if ANS1 presently indicates that the NVMe SSD is "Corsair Force 600 NVMe 1TB SSD". And if your SSD is a Samsung, then change the name (and model) to something like "Samsung PRO 970 NVMe 512GB SSD ". Such editing can be accompished by studying the files (don't expect much hand-holding with these modifications).
 
 There are sets of SSDT files which rename the various USB devices on the TRX40 builds. The ones named DOB8 and D1B8 are common to all builds and are renamed to XHC1 and XHC2, respectively.
+
+![Test Image 1](Images/S0D1.jpg)
+
+
+![Test Image 2](Images/S0D2.jpg)
 
 
 ### 2. Kexts
