@@ -154,7 +154,7 @@ Native NVRAM was successfully implemented. There are several steps required. The
 
 Next, the NVRAM is activated by following these steps: 
 
-- Adjust Quirks as shown below and set WriteFlash to Yes (enable; while leaving LegacyEnable and LegacyOverwrite disabled):
+- Adjust Quirks as shown below and set WriteFlash to Yes (enable; while leaving LegacyEnable and LegacyOverwrite disabled). In the screenshot below, you can see _#MmioWhitelist_ (the _#_ comments out this iitem), which contains a brief example of what the MmioWhitelist contains, as a guide for making your own (this item can be deleted as you wish):
 ![Test Image 12](Images/NVRAM-1.jpg)
 
 - Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
