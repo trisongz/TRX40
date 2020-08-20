@@ -45,11 +45,17 @@ There are sets of SSDT files which rename the various USB devices on the TRX40 b
 ![Test Image 2](Images/S0D2.jpg)
 
 
-To delete an internal BT/Wifi device (AX200), the following can be done:......__(to be completed)__
-
-See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
+The result of these USB SSDT can be seen using the Hackintool app (shown below). WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
 ![Test Image 3](Images/Hackintool-USB.jpg)
+
+
+__Cancelling a device with an SSDT__
+
+With Hackintoshes, we all personalize our builds. One area where this is apparent is with BT/Wifi issues: some don't use at all, some try to use the built-in device (will be discussed later in kext section), some use an AIC and some swap out the built-in card for a Mac compatible model. Each of these can require different SSDT and kext files. We'll ignore the first two cases, but if an AIC is used, it is best to deactivate the internal module which is an AX200 for most TRX40 mobos). This can be done via an SSDT. 
+
+Before using an SSDT, we need to locate which USB device port is powering the AX200 module using IORegitryExplorer. Once that USB device port is located, in this case it was PRT5 under XHC, we re-define all of the ports except that port with the SSDT. The image below shows how the internal BT is disabled, there is simply no PRT5 being defined: it disappears and so does the internal BT module:
+![Test Image 14](Images/SSDT-NoBT.jpg)
 
 
 ### 2. Kexts
