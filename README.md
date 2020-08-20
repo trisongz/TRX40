@@ -59,7 +59,7 @@ __S0D2 Section:__
 
 The result of these USB SSDT can be seen using the Hackintool app (shown below). WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
-__Hackintool:__
+__Hackintool - USB Devices:__
 ![Test Image 3](Images/Hackintool-USB.jpg)
 
 
