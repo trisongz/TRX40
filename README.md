@@ -144,7 +144,7 @@ The images below show the steps. When editing the __config.plist__ file, the rec
 
 - [OpenCore Discussion](https://www.insanelymac.com/forum/topic/338516-opencore-discussion/?page=1) for general OC issues
 
- [TRX40 Bare Metal Discussion](https://www.macos86.it/topic/3307-trx40-bare-metal-vanilla-patches-yes-it-worksbutproxmox-is-better/#comments) for general TRX40 bare metal issues (started by fabiosun)
+- [TRX40 Bare Metal Discussion](https://www.macos86.it/topic/3307-trx40-bare-metal-vanilla-patches-yes-it-worksbutproxmox-is-better/#comments) for general TRX40 bare metal issues (started by fabiosun)
 
 ### Credits
 
