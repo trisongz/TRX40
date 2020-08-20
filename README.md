@@ -146,11 +146,11 @@ Native NVRAM was successfully implemented. There are several steps required. The
 
 Next, the NVRAM is activated by following these steps: 
 
-1 Adjust Quirks as shown below and set WriteFlash to Yes (enable; while leaving LegacyEnable and LegacyOverwrite disabled):
-[Test Image 12](Images/NVRAM-1.jpg)
+- Adjust Quirks as shown below and set WriteFlash to Yes (enable; while leaving LegacyEnable and LegacyOverwrite disabled):
+![Test Image 12](Images/NVRAM-1.jpg)
 
-2. Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
-[Test Image 13](Images/NVRAM-OC-settings-2.jpg)
+- Within the NVRAM section, see that csr-active-config is set to FF0F0000 under Add and csr-active-config is entered under delete: 
+![Test Image 13](Images/NVRAM-OC-settings-2.jpg)
 
 
 ## B. Usage
