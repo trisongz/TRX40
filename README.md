@@ -111,9 +111,9 @@ It is also probably best to keep _npci=0x2000_ in the boot arg no matter the set
 
 As mentioned above, the SMBIOS iMacPro1,1 is probably the best for this build and is very stable when running under Mojave.
 
-The SMBIOS data can be generated using an old copy of Clover (but do NOT use Clover to edit the __config.plist__ files for OpenCore), or using the recommended [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Also, do not use apps like "OpenCore configurator"; such editors will corrupt the __config.plist__ file.
+The SMBIOS data can be generated using an old copy of Clover (but do NOT use Clover to edit the __config.plist__ files for OpenCore), or using the recommended [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
-If you already have SNs and UUIDs values in an existing OpenCore config file, then cloning that SMBIOS data is easy. OC allows you to simpliy copy and paste sections, such as the PlatformInfo section, between config files.
+If you already have SNs and UUIDs values in an existing OpenCore config file, then cloning that SMBIOS data is easy. OC allows you to simpliy copy and paste sections, such as the PlatformInfo section, between config files. (However, keep in mind that if you _change_ your SMBIOS, first log out of iCloud, perform the SMBIOS change, reboot, and then re-log into iCloud.)
 
 The images below show the steps. When editing the __config.plist__ file, the recommended editors are PlistEdit Pro, Xcode or [ProperTree](https://github.com/corpnewt/ProperTree).
 
