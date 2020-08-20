@@ -102,7 +102,7 @@ Reportedly, the Gen3 setting is better for maxmizing performance from currently 
 | IOMMU     |  Enabled |
 | SMT     |  Enabled |
 | CSM                |  Disabled    |
-| Above 4G decoding  |  Enabled     |
+| Above 4G decoding  |  Disabled     |
 
 It is also probably best to keep _npci=0x2000_ in the boot arg no matter the setting of _Above 4G decoding_. It is said that if _Above 4G decoding_ is enabled that _npci=0x2000_ should be removed from the boot arg; I've not seen this as a problem, so I've been leaving in the boot arg.
 
