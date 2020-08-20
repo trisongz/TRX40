@@ -175,7 +175,6 @@ Next, the NVRAM is activated by following these steps:
 
 - [AlGrey](https://github.com/AlGreyy) for the idea and creation of the AMD [patches](https://github.com/AMD-OSX/AMD_Vanilla/tree/opencore)
 - [Original TRX40](https://www.macos86.it/topic/2675-proxmox-ve-osx-guide-discussion/) VM started by fabiosun
-- 
 - [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) for Hackintool utility
 - [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) for Kext Updater utility
 - [Dortania's OC Guide](https://dortania.github.io/OpenCore-Install-Guide/) OC Install and Guild Book
