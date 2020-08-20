@@ -59,14 +59,14 @@ The above kext files may be updated independent of this repository using [Hackin
 
 See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
-![Test Image 4](Images/Hackintol-USB.png)
+![Test Image 4](Images/Hackintol-USB.jpg)
 
 
 ### 3. System Information / PCI
 
 This section shows the current status of the System Information section in Mac OS. The image shown represents the various devices being re-named by the DevicesProperties section of OC, some of which are included in the _config.plist file_.
 
-![Test Image 8](Images/SystemInfo-PCi.png)
+![Test Image 8](Images/SystemInfo-PCI.jpg)
 
 
 ### 4. Drivers
