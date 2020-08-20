@@ -77,17 +77,17 @@ Only a few drivers are required with OpenCore: HSSPlus, OpenCanopy and OpenRunti
 
 ### 5. BIOS Settings
 
-Reportedly, the Gen3 setting is better for maxmizing performance from currently available GPUs. Experiment with the Gen3 vs Auto setting and see what works best for your build. Except for these discussed items, most other BIOS settings are default. IOMMU and SMT need to be enabled should you wish to boot via VM such as with Proxmox (not discussed in this repository; see fabiosun's thread on Proxmox listed at bottom).
+Reportedly, the Gen3 setting is better for maxmizing performance from currently available GPUs. Experiment with the Gen3 vs Auto setting and see what works best for your build. Most other BIOS settings are default. IOMMU and SMT need to be enabled should you wish to boot via VM such as with Proxmox (not discussed in this repository; see fabiosun's thread on Proxmox listed at bottom). ErP and Above 4G decoding are best left off.
 
 |                    |              |
 | ------------------ | ------------ |
-| Erp Power                 |  Disabled     |
+| ErP Power                 |  Disabled     |
 | IOMMU     |  Enabled |
 | SMT     |  Enabled |
 | CSM                |  Disabled    |
 | Above 4G decoding  |  Enabled     |
 
-It is best to keep _npci=0x2000_ in the boot arg no matter the setting of _Above 4G decoding_. It is said that if _Above 4G decoding_ is enabled that _npci=0x2000_ should be removed from the boot arg; I've not seen this as a problem, so I've been leaving in the boot arg.
+It is also probably best to keep _npci=0x2000_ in the boot arg no matter the setting of _Above 4G decoding_. It is said that if _Above 4G decoding_ is enabled that _npci=0x2000_ should be removed from the boot arg; I've not seen this as a problem, so I've been leaving in the boot arg.
 
 
 ### 7. SMBIOS - How to Easily Update in OC
