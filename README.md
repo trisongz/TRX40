@@ -59,7 +59,7 @@ The above kext files may be updated independent of this repository using [Hackin
 
 See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
 
-![Test Image 4](Images/Hackintol-USB.jpg)
+![Test Image 4](Images/Hackintool-USB.jpg)
 
 
 ### 3. System Information / PCI
