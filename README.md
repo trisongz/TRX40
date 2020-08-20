@@ -140,6 +140,11 @@ The second item concerns sleep and sudden shutdowns from sleep (but with the abo
 ![Test Image 11](Images/EnergySaver.jpg)
 
 
+### 7. Native NVRAM
+
+Native NVRAM was successfully implemented. There are several steps required. These are outlined in detail on fabiosun's thread here. 
+
+
 ## B. Usage
  
 - To build OpenCore using Pavo's OCBuilder, it is recommended to use the Release version with or without kexts update.
