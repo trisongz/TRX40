@@ -47,6 +47,9 @@ There are sets of SSDT files which rename the various USB devices on the TRX40 b
 
 To delete an internal BT/Wifi device (AX200), the following can be done:......__(to be completed)__
 
+See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
+
+![Test Image 3](Images/Hackintool-USB.jpg)
 
 
 ### 2. Kexts
@@ -66,10 +69,6 @@ MacProMemoryNotificationDisabler is only to be enabled when using SMBIOS _MacPro
 [SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) is useful for providing CPU temperature and frequency information.  The kexts were designed for the X570 AMD chip, and not surprisingly, it is unstable with Catalina and Big Sur with the TRX40 running bare metal. Please refer to its GitHub for the latest updates and for downloading the associated AMD Power Gadget app which presents the data. However, _AMDRyzenCPUPowerManagement.kext_ and AMD Power Gadget app is stable with Catalina with the TRX40 build, but it is not stable under Big Sur and Big Sur won't boot if either of these kexts are enabled.
 
 The above kext files may be updated independent of this repository using [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/), [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) or [OCBuilder](https://github.com/Pavo-IM/ocbuilder/releases). 
-
-See the Hackintools image for USB details below. This image reflects using the included SSDT files for complete renaming of the USB devices. WIthout the use of these SSDT files, the Hackintool USB section would be empty of all devices.
-
-![Test Image 3](Images/Hackintool-USB.jpg)
 
 
 ### 3. System Information / PCI
