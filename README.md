@@ -89,7 +89,7 @@ If you choose to use the OpenCanopy drive for the menu system, some items may be
 
 ![Test Image 7](Images/Shutdown.jpg)
 
-![Test Image 7](Images/Misc-Auxillary.jpg)
+![Test Image 8](Images/Misc-Auxillary.jpg)
 
 
 ### 5. BIOS Settings
@@ -126,15 +126,17 @@ The images below show the steps. When editing the __config.plist__ file, the rec
 - Highlight and click into the remaining section marked _PlatformInfo 2_, editing out the space and 2 (" 2").
 - Then save the file.
 
-![Test Image 10](Images/OC_copy.jpg)
+![Test Image 9](Images/OC_copy.jpg)
 
-![Test Image 11](Images/OC_paste.jpg)
+![Test Image 10](Images/OC_paste.jpg)
 
 ### 7. Stability Issues
 
 There are presently two basic concerns with this build. The first is the inability to perform a shutdown from with the macOS. If Shutdown is selected from the Apple menu, the computer reboots (panic restart) immediately after 'clicking' off.
 
-The second item concerns sleep and sudden shutdowns from sleep (but with the above panic restart). The best method to avoid this problem is to turn off Energy Saver.
+The second item concerns sleep and sudden shutdowns from sleep (but with the above panic restart). The best method to avoid this problem is to turn off all settings within Energy Saver, leaving only "Prevent computer from sleeping..." as shown below.
+
+![Test Image 11](Images/EnergySaver.jpg)
 
 
 ## B. Usage
